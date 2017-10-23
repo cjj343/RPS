@@ -16,14 +16,13 @@ RPSGame::RPSGame()
 
 char RPSGame::AI()
 {
-	//TODO: USE VECTOR OF PAST HUMAN CHOICES TO DETERMINE BEST MOVE FOR COMPUTER
     int roll;
     char guess;
     char response;
 
     if (!humanChoices.length())
     {
-        // First round, randomly guess
+        // First round, randomly guess what the player will do
         roll = rand() % 3;
         switch (roll)
         {
@@ -41,11 +40,11 @@ char RPSGame::AI()
     else
     {
         // We randomly select from the past human choices, so we are weighting our
-        // guess based on the what has already been chosen
+        // guess based on the what has already been chosen by the player
         guess = humanChoices[rand() % humanChoices.length()];
     }
 
-    // Now, base don our guess, select our response
+    // Now, based on the guess, select the computer's response
     switch (guess)
     {
     case 'r':
@@ -76,39 +75,35 @@ void RPSGame::setStrength()
 
 void RPSGame::setHumanTool(char choice)
 {
-	//TODO: SET HUMAN POINTER TO DYNAMICALLY ALLOCATED S, R OR P OBJECT
-	//TODO: PASS APPROPRAITE STRENGTH IN CONSTRUCTOR
     switch (choice)
     {
     case 'r':
-        human = new Rock();
+        human = new Rock(rstrength);
         break;
     case 'p':
-        human = new Paper();
+        human = new Paper(pstrength);
         break;
     case 's':
-        human = new Scissors();
+        human = new Scissors(sstrength);
         break;
     }
 
-	//TODO: ADD HUMAN CHOICE TO VECTOR
+    // Add the human choice to the vector for use in the AI
     humanChoices.push_back(choice);
 }
 
 void RPSGame::setComputerTool(char choice)
 {
-	//TODO: SET COMPUTER POINTER TO DYNAMICALLY ALLOCATED S, R OR P OBJECT
-	//TODO: PASS APPROPRAITE STRENGTH IN CONSTRUCTOR
     switch (choice)
     {
     case 'r':
-        computer = new Rock();
+        computer = new Rock(rstrength);
         break;
     case 'p':
-        computer = new Paper();
+        computer = new Paper(pstrength);
         break;
     case 's':
-        computer = new Scissors();
+        computer = new Scissors(sstrength);
         break;
     }
 }

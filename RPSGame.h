@@ -5,8 +5,8 @@
 #include "Paper.h"
 #include "Rock.h"
 #include <vector>
-#include <cstdlib>  // For srand() and rand()
-#include <ctime>    // To seed srand()
+#include <cstdlib>  // For srand and rand
+#include <ctime>    // To seed srand
 //INCLUDE MENU HELPER CLASS
 //INCLUDE VALIDATION HELPER CLASS
 
@@ -27,19 +27,15 @@ public:
 	RPSGame();
 	//TODO: OPERATOR OVERLOADS
 	//TODO: AUX FUNCTIONS, GET FUNCTIONS, SET FUNCTIONS ETC.
-	//TODO: AI FUNCTION
 	char AI();
 	//TODO: PRINT GAME STATS FUNCTION (<< OPERATOR OVERLOAD?)
 	void printStats();
 	//TODO: SET DIFFERENT TOOL STRENGTH
 	void setStrength();
-	//TODO: SET HUMAN TOOL
-	void setHumanTool(char);
-	//TODO: SET COMPUTER TOOL
-	void setComputerTool(char);
+	void setHumanTool(char choice);
+	void setComputerTool(char choice);
 	//TODO: RUN GAME
 	void runGame();
-	//TODO: CLEAN UP DYNAMIC MEMORY
 	void cleanUp();
 
 	~RPSGame();
