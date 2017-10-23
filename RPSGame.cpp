@@ -2,8 +2,10 @@
 
 RPSGame::RPSGame()
 {
-	human = 0;
-	computer = 0;
+    // Seed the random number generator
+    std::srand(std::time(0));
+	human = nullptr;
+	computer = nullptr;
 	human_wins = 0;
 	computer_wins = 0;
 	ties = 0;
