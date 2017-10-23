@@ -88,6 +88,9 @@ void RPSGame::setHumanTool(char choice)
         human = new Scissors();
         break;
     }
+
+	//TODO: ADD HUMAN CHOICE TO VECTOR
+    humanChoices.push_back(choice);
 }
 
 void RPSGame::setComputerTool(char choice)
@@ -118,10 +121,33 @@ void RPSGame::runGame()
 
 void RPSGame::cleanUp()
 {
-	//TODO: DELETE DYNAMIC MEMORY AFTER EACH ROUND
-	//TODO: ADD HUMAN CHOICE TO VECTOR
+    // NOTE: Moved update of human choices to the setHumanTool method
+    if (human)
+    {
+        delete human;
+        human = nullptr;
+    }
+    
+    if (computer)
+    {
+        delete computer;
+        computer = nullptr;
+    }
 }
 
 RPSGame::~RPSGame()
 {
+    // Should be handled each round in cleanUp, but included again in the
+    // destructor to ensure memory is freed if an exception occurs
+    if (human)
+    {
+        delete human;
+        human = nullptr;
+    }
+    
+    if (computer)
+    {
+        delete computer;
+        computer = nullptr;
+    }
 }
