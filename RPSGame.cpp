@@ -15,6 +15,49 @@ RPSGame::RPSGame()
 char RPSGame::AI()
 {
 	//TODO: USE VECTOR OF PAST HUMAN CHOICES TO DETERMINE BEST MOVE FOR COMPUTER
+    int roll;
+    char guess;
+    char response;
+
+    if (!humanChoices.length())
+    {
+        // First round, randomly guess
+        roll = rand() % 3;
+        switch (roll)
+        {
+        case 0:
+            guess = 'r';
+            break;
+        case 1:
+            guess = 'p';
+            break;
+        case 2:
+            guess = 's';
+            break;
+        }
+    }
+    else
+    {
+        // We randomly select from the past human choices, so we are weighting our
+        // guess based on the what has already been chosen
+        guess = humanChoices[rand() % humanChoices.length()];
+    }
+
+    // Now, base don our guess, select our response
+    switch (guess)
+    {
+    case 'r':
+        response = 'p';
+        break;
+    case 'p':
+        response = 's';
+        break;
+    case 's':
+        response = 'r';
+        break;
+    }
+
+    return response;
 }
 
 void RPSGame::printStats()
