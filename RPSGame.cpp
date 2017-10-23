@@ -72,16 +72,40 @@ void RPSGame::setStrength()
 	//TODO: STRENGTHS USED WITH NEW OBJECT CONSTRUCTOR
 }
 
-void RPSGame::setHumanTool(char)
+void RPSGame::setHumanTool(char choice)
 {
 	//TODO: SET HUMAN POINTER TO DYNAMICALLY ALLOCATED S, R OR P OBJECT
 	//TODO: PASS APPROPRAITE STRENGTH IN CONSTRUCTOR
+    switch (choice)
+    {
+    case 'r':
+        human = new Rock();
+        break;
+    case 'p':
+        human = new Paper();
+        break;
+    case 's':
+        human = new Scissors();
+        break;
+    }
 }
 
-void RPSGame::setComputerTool(char)
+void RPSGame::setComputerTool(char choice)
 {
 	//TODO: SET COMPUTER POINTER TO DYNAMICALLY ALLOCATED S, R OR P OBJECT
 	//TODO: PASS APPROPRAITE STRENGTH IN CONSTRUCTOR
+    switch (choice)
+    {
+    case 'r':
+        computer = new Rock();
+        break;
+    case 'p':
+        computer = new Paper();
+        break;
+    case 's':
+        computer = new Scissors();
+        break;
+    }
 }
 
 
