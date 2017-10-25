@@ -50,5 +50,19 @@
     <ClCompile Include="play_game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Helper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Menu.h">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="Helper.h">
+      <Filter>Header Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

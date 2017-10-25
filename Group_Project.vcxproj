@@ -118,12 +118,18 @@
     <ClInclude Include="Tool.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Helper.cpp" />
+    <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Paper.cpp" />
     <ClCompile Include="Rock.cpp" />
     <ClCompile Include="RPSGame.cpp" />
     <ClCompile Include="play_game.cpp" />
     <ClCompile Include="Scissors.cpp" />
     <ClCompile Include="Tool.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Helper.h" />
+    <None Include="Menu.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
