@@ -15,6 +15,7 @@ Paper::Paper(int x) : Tool(x, 'p')
 double Paper::fight(char)
 {
 	//TODO: FIGHT CODE
+
 }
 
 

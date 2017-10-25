@@ -1,4 +1,5 @@
 #include "RPSGame.h"
+#include <iostream>
 
 RPSGame::RPSGame()
 {
@@ -20,7 +21,7 @@ char RPSGame::AI()
     char guess;
     char response;
 
-    if (!humanChoices.length())
+    if (!humanChoices.size())
     {
         // First round, randomly guess what the player will do
         roll = rand() % 3;
@@ -41,7 +42,7 @@ char RPSGame::AI()
     {
         // We randomly select from the past human choices, so we are weighting our
         // guess based on the what has already been chosen by the player
-        guess = humanChoices[rand() % humanChoices.length()];
+        guess = humanChoices[rand() % humanChoices.size()];
     }
 
     // Now, based on the guess, select the computer's response
@@ -94,6 +95,7 @@ void RPSGame::setHumanTool(char choice)
 
 void RPSGame::setComputerTool(char choice)
 {
+
     switch (choice)
     {
     case 'r':
@@ -111,6 +113,7 @@ void RPSGame::setComputerTool(char choice)
 
 void RPSGame::runGame()
 {
+
 	//TODO: CALL COMPUTER AND HUMAN FIGHT FUNCTIONS
 	//TODO: COMPARE RESULTS RETURNED FROM FUNCTIONS
 	//TODO: ADD RESULT TO MEMBER VARIABLES
@@ -118,6 +121,7 @@ void RPSGame::runGame()
 
 void RPSGame::cleanUp()
 {
+
     // NOTE: Moved update of human choices to the setHumanTool method
     if (human)
     {

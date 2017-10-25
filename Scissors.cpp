@@ -15,6 +15,7 @@ Scissors::Scissors(int x) : Tool(x, 's')
 double Scissors::fight(char)
 {
 	//TODO: FIGHT CODE
+
 }
 
 
