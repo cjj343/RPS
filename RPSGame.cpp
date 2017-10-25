@@ -69,7 +69,13 @@ void RPSGame::printStats()
 
 void RPSGame::setStrength()
 {
-	//TODO: PROMPT USE FOR SPECIFIC STRENGTH AND SET THEM TO MEMBER VARIABLES
+    std::cout << "What would you like the strength of the Rock to be? (min of 1)" << std::endl;
+
+    std::cout << "What would you like the strength of the Paper to be? (min of 1)" << std::endl;
+
+    std::cout << "What would you like the strength of the Sissors to be? (min of 1)" << std::endl;
+    
+    //TODO: PROMPT USE FOR SPECIFIC STRENGTH AND SET THEM TO MEMBER VARIABLES
 	//TODO: VALIDATE INPUT
 	//TODO: STRENGTHS USED WITH NEW OBJECT CONSTRUCTOR
 }
