@@ -4,11 +4,13 @@
 #include "Scissors.h"
 #include "Paper.h"
 #include "Rock.h"
+#include "Helper.h"
+#include <iostream>
 #include <vector>
+#include <string>
 #include <cstdlib>  // For srand and rand
 #include <ctime>    // To seed srand
 //INCLUDE MENU HELPER CLASS
-//INCLUDE VALIDATION HELPER CLASS
 
 class RPSGame
 {

@@ -69,15 +69,21 @@ void RPSGame::printStats()
 
 void RPSGame::setStrength()
 {
-    std::cout << "What would you like the strength of the Rock to be? (min of 1)" << std::endl;
-
-    std::cout << "What would you like the strength of the Paper to be? (min of 1)" << std::endl;
-
-    std::cout << "What would you like the strength of the Sissors to be? (min of 1)" << std::endl;
+    std::string userInput;
     
-    //TODO: PROMPT USE FOR SPECIFIC STRENGTH AND SET THEM TO MEMBER VARIABLES
-	//TODO: VALIDATE INPUT
-	//TODO: STRENGTHS USED WITH NEW OBJECT CONSTRUCTOR
+    std::cout << "What would you like the strength of the Rock to be?" << std::endl;
+    std::getline(std::cin, userInput);
+    rstrength = validateInt(userInput);
+
+    std::cout << "What would you like the strength of the Paper to be?" << std::endl;
+    std::getline(std::cin, userInput);
+    pstrength = validateInt(userInput);
+
+    std::cout << "What would you like the strength of the Sissors to be?" << std::endl;
+    std::getline(std::cin, userInput);
+    sstrength = validateInt(userInput);
+
+    //BUILD IN A MINIMUM VALIDATION
 }
 
 void RPSGame::setHumanTool(char choice)
