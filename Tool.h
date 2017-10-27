@@ -8,8 +8,9 @@ private:
 public:
 	Tool(int, char);
 	void SetStrength(int x);
-	//VIRUAL FIGHT FUNCTION ALLOWS CORRECT TOOL TO BE ACCESSED BY TOOL* IN RPS GAME CLASS
+	//VIRTUAL FIGHT FUNCTION ALLOWS CORRECT TOOL TO BE ACCESSED BY TOOL* IN RPS GAME CLASS
 	virtual double fight(char) = 0;
+	char getType();
 	//VIRTUAL DESTRUCTOR
 	virtual ~Tool();
 };

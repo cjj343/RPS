@@ -125,10 +125,28 @@ void RPSGame::setComputerTool(char choice)
 
 void RPSGame::runGame()
 {
+	int humanResult;
+	int computerResult;
 
-	//TODO: CALL COMPUTER AND HUMAN FIGHT FUNCTIONS
-	//TODO: COMPARE RESULTS RETURNED FROM FUNCTIONS
-	//TODO: ADD RESULT TO MEMBER VARIABLES
+	//Call human and computer fight functions
+	humanResult = human->fight(computer->getType());
+	computerResult = computer->fight(human->getType());
+	
+	//Compare results returned from fight functions and increment wins/ties
+	if (humanResult > computerResult)
+	{
+		human_wins++;
+	}
+
+	else if (computerResult > humanResult)
+	{
+		computer_wins++;
+	}
+
+	else
+	{
+		ties++;
+	}
 }
 
 void RPSGame::cleanUp()
