@@ -131,8 +131,8 @@ void RPSGame::setComputerTool(char choice)
 
 void RPSGame::runGame()
 {
-	int humanResult;
-	int computerResult;
+	double humanResult;
+	double computerResult;
 
 	//Call human and computer fight functions
 	humanResult = human->fight(computer->getType());
