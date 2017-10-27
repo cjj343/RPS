@@ -23,12 +23,12 @@ double Paper::fight(char type)
 	}
 	else if (type == 'r')
 	{
-		result strength * 2.0;
+		result = strength * 2.0;
 	}
-	else
+	/*else
 	{
 		result
-	}
+	}*/
 
 	return result;
 	//TODO: FIGHT CODE

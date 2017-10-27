@@ -50,12 +50,15 @@ char RPSGame::AI()
     {
     case 'r':
         response = 'p';
+		std::cout << "Computer chose paper." << std::endl;
         break;
     case 'p':
         response = 's';
+		std::cout << "Computer chose scissors." << std::endl;
         break;
     case 's':
         response = 'r';
+		std::cout << "Computer chose rock." << std::endl;
         break;
     }
 
@@ -64,7 +67,10 @@ char RPSGame::AI()
 
 void RPSGame::printStats()
 {
-	//TODO: PRINT ALL DETAILS OF CURRENT ROUND
+	//Print stats at the end of current round
+	std::cout << "Human wins: " << human_wins << std::endl
+		<< "Computer wins: " << computer_wins << std::endl
+		<< "Ties: " << ties << std::endl;
 }
 
 void RPSGame::setStrength()
@@ -79,7 +85,7 @@ void RPSGame::setStrength()
     std::getline(std::cin, userInput);
     pstrength = validateInt(userInput);
 
-    std::cout << "What would you like the strength of the Sissors to be?" << std::endl;
+    std::cout << "What would you like the strength of the Scissors to be?" << std::endl;
     std::getline(std::cin, userInput);
     sstrength = validateInt(userInput);
 
@@ -135,16 +141,19 @@ void RPSGame::runGame()
 	//Compare results returned from fight functions and increment wins/ties
 	if (humanResult > computerResult)
 	{
+		std::cout << "You win!" << std::endl;
 		human_wins++;
 	}
 
 	else if (computerResult > humanResult)
 	{
+		std::cout << "Computer wins!" << std::endl;
 		computer_wins++;
 	}
 
 	else
 	{
+		std::cout << "It's a tie!" << std::endl;
 		ties++;
 	}
 }

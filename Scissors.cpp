@@ -13,7 +13,7 @@ Scissors::Scissors(int x) : Tool(x, 's')
 
 //ACCEPTS A CHAR REPRESENTING THE TYPE OF TOOL TO BE FOUGHT
 //RETURNS A DOUBLE DUE TO DIVISION (I.E. SCISSOR STRENGTH = 1, FIGHTING ROCK = STRENGTH(1) DIVIDED BY 2)
-double Scissors::fight(char)
+double Scissors::fight(char type)
 {
 	double result = strength;
 
@@ -23,12 +23,12 @@ double Scissors::fight(char)
 	}
 	else if (type == 'p')
 	{
-		result strength * 2.0;
+		result = strength * 2.0;
 	}
-	else
+	/*else
 	{
 		result
-	}
+	}*/
 
 	return result;
 	//TODO: FIGHT CODE

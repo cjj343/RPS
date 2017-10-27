@@ -3,8 +3,9 @@
 class Tool
 {
 private:
-	int strength;
 	char type;
+protected:
+	int strength;
 public:
 	Tool(int, char);
 	void SetStrength(int x);
