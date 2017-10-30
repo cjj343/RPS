@@ -31,17 +31,20 @@ int main()
 	startMenuChoice = validateInt(userChoice);
 	startMenuChoice = startMenu.getUserInt(startMenuChoice);
 
-	//ASK USER IF THEY WANT TO SET STRENGTH OF TOOLS
-	std::cout << "Would you like to set the tool strength? (Y or N)" << std::endl;
-	std::getline(std::cin, userChoice);
-	//VALIDATE INPUT 
-	YN = validateChar(userChoice);
-	YN = yesOrNo(YN);
-
-	if (YN == 'Y' || YN == 'y')
+	if (startMenuChoice != 2)
 	{
-		//IF YES CALL RPSGAME SETSTRENGTH FUNCTION
-		driver.setStrength();
+		//ASK USER IF THEY WANT TO SET STRENGTH OF TOOLS
+		std::cout << "Would you like to set the tool strength? (Y or N)" << std::endl;
+		std::getline(std::cin, userChoice);
+		//VALIDATE INPUT 
+		YN = validateChar(userChoice);
+		YN = yesOrNo(YN);
+
+		if (YN == 'Y' || YN == 'y')
+		{
+			//IF YES CALL RPSGAME SETSTRENGTH FUNCTION
+			driver.setStrength();
+		}
 	}
 
 	//WHILE USER WANTS TO PLAY
