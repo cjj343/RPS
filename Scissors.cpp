@@ -1,4 +1,4 @@
-#include "Scissors.h"
+#include "Scissors.hpp"
 
 
 Scissors::Scissors() : Tool(1, 's')
@@ -25,13 +25,10 @@ double Scissors::fight(char type)
 	{
 		result = strength * 2.0;
 	}
-	/*else
-	{
-		result
-	}*/
+
 
 	return result;
-	//TODO: FIGHT CODE
+
 
 }
 

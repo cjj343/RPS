@@ -1,5 +1,4 @@
-#include "Rock.h"
-
+#include "Rock.hpp"
 
 
 Rock::Rock() : Tool(1, 'r')
@@ -26,14 +25,9 @@ double Rock::fight(char type)
 	{
 		result = strength * 2.0;
 	}
-	//Don't think the else is necessary in fight functions
-	/*else
-	{
-		result
-	}*/
 
 	return result;
-	//TODO: FIGHT CODE
+
 }
 
 

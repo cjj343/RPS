@@ -1,6 +1,7 @@
-#include "RPSGame.h"
+#include "RPSGame.hpp"
 #include <iostream>
 
+//CONSTRUCTOR
 RPSGame::RPSGame()
 {
     // Seed the random number generator
@@ -13,15 +14,20 @@ RPSGame::RPSGame()
 	sstrength = 1;
 	pstrength = 1;
 	rstrength = 1;
+	compsstrength = 1;
+	comppstrength = 1;
+	comprstrength = 1;
 }
 
+//IMPLEMENTS AI
+//RETURNS CHAR REPRESENTING COMPUTER CHOICE
 char RPSGame::AI()
 {
     int roll;
     char guess;
     char response;
 
-    if (!humanChoices.size())
+    if (humanChoices.size() <= 1)
     {
         // First round, randomly guess what the player will do
         roll = rand() % 3;
@@ -29,42 +35,49 @@ char RPSGame::AI()
         {
         case 0:
             guess = 'r';
+			std::cout << "Computer choses rock." << std::endl;
             break;
         case 1:
             guess = 'p';
+			std::cout << "Computer choses paper." << std::endl;
             break;
         case 2:
             guess = 's';
+			std::cout << "Computer choses scissors." << std::endl;
             break;
         }
-    }
-    else
-    {
-        // We randomly select from the past human choices, so we are weighting our
-        // guess based on the what has already been chosen by the player
-        guess = humanChoices[rand() % humanChoices.size()];
+
+		return guess;
     }
 
-    // Now, based on the guess, select the computer's response
-    switch (guess)
-    {
-    case 'r':
-        response = 'p';
-		std::cout << "Computer chose paper." << std::endl;
-        break;
-    case 'p':
-        response = 's';
-		std::cout << "Computer chose scissors." << std::endl;
-        break;
-    case 's':
-        response = 'r';
-		std::cout << "Computer chose rock." << std::endl;
-        break;
-    }
+	else
+	{
+		// We randomly select from the past human choices, so we are weighting our
+		// guess based on the what has already been chosen by the player
+		guess = humanChoices[rand() % humanChoices.size()];
 
-    return response;
+		// Now, based on the guess, select the computer's response
+		switch (guess)
+		{
+		case 'r':
+			response = 'p';
+			std::cout << "Computer choses paper." << std::endl;
+			break;
+		case 'p':
+			response = 's';
+			std::cout << "Computer choses scissors." << std::endl;
+			break;
+		case 's':
+			response = 'r';
+			std::cout << "Computer choses rock." << std::endl;
+			break;
+		}
+
+		return response;
+	}
 }
 
+//PRINTS STATS FROM THE ROUNDS
 void RPSGame::printStats()
 {
 	//Print stats at the end of current round
@@ -73,25 +86,39 @@ void RPSGame::printStats()
 		<< "Ties: " << ties << std::endl;
 }
 
+//SETS THE STRENGTH FOR COMPUTER AND HUMAN TOOLS
 void RPSGame::setStrength()
 {
     std::string userInput;
     
-    std::cout << "What would you like the strength of the Rock to be?" << std::endl;
+    std::cout << "What would you like the strength of the Rock to be? (Human)" << std::endl;
     std::getline(std::cin, userInput);
     rstrength = validateInt(userInput);
 
-    std::cout << "What would you like the strength of the Paper to be?" << std::endl;
+	std::cout << "What would you like the strength of the Rock to be? (Computer)" << std::endl;
+	std::getline(std::cin, userInput);
+	comprstrength = validateInt(userInput);
+
+    std::cout << "What would you like the strength of the Paper to be? (Human)" << std::endl;
     std::getline(std::cin, userInput);
     pstrength = validateInt(userInput);
 
-    std::cout << "What would you like the strength of the Scissors to be?" << std::endl;
+	std::cout << "What would you like the strength of the Paper to be? (Computer)" << std::endl;
+	std::getline(std::cin, userInput);
+	comppstrength = validateInt(userInput);
+
+    std::cout << "What would you like the strength of the Scissors to be? (Human)" << std::endl;
     std::getline(std::cin, userInput);
     sstrength = validateInt(userInput);
 
-    //BUILD IN A MINIMUM VALIDATION
+	std::cout << "What would you like the strength of the Scissors to be? (Computer)" << std::endl;
+	std::getline(std::cin, userInput);
+	compsstrength = validateInt(userInput);
+
 }
 
+//ACCEPTS CHAR FROM MAIN
+//DYNAMICALLY ALLOCATES NEW OBJECT THAT IS HUMAN TOOL
 void RPSGame::setHumanTool(char choice)
 {
     switch (choice)
@@ -111,24 +138,27 @@ void RPSGame::setHumanTool(char choice)
     humanChoices.push_back(choice);
 }
 
+//ACCEPTS CHAR FROM AI FUNCTION
+//DYNAMICALLY ALLOCATS OBJECT
 void RPSGame::setComputerTool(char choice)
 {
 
     switch (choice)
     {
     case 'r':
-        computer = new Rock(rstrength);
+        computer = new Rock(comprstrength);
         break;
     case 'p':
-        computer = new Paper(pstrength);
+        computer = new Paper(comppstrength);
         break;
     case 's':
-        computer = new Scissors(sstrength);
+        computer = new Scissors(compsstrength);
         break;
     }
 }
 
-
+//RUNS THE GAME
+//INCREMENTS SCORE
 void RPSGame::runGame()
 {
 	double humanResult;
@@ -158,10 +188,10 @@ void RPSGame::runGame()
 	}
 }
 
+//CLEANS UP DYNAMIC MEMORY AFTER EACH ROUND
 void RPSGame::cleanUp()
 {
 
-    // NOTE: Moved update of human choices to the setHumanTool method
     if (human)
     {
         delete human;
@@ -175,6 +205,7 @@ void RPSGame::cleanUp()
     }
 }
 
+//DESTRUCTOR
 RPSGame::~RPSGame()
 {
     // Should be handled each round in cleanUp, but included again in the

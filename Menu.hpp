@@ -6,12 +6,12 @@ version can create a menu with numbered or lettered choices.  It also handles an
 the user selection.
 ***********************************************************************************************/
 
-#ifndef MENU_H
-#define MENU_H
+#ifndef MENU_HPP
+#define MENU_HPP
 
 #include <string>
 #include <vector>
-#include "Helper.h"
+#include "Helper.hpp"
 
 class Menu
 {

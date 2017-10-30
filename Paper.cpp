@@ -1,4 +1,4 @@
-#include "Paper.h"
+#include "Paper.hpp"
 
 
 Paper::Paper() : Tool(1, 'p')
@@ -25,13 +25,9 @@ double Paper::fight(char type)
 	{
 		result = strength * 2.0;
 	}
-	/*else
-	{
-		result
-	}*/
 
 	return result;
-	//TODO: FIGHT CODE
+
 }
 
 

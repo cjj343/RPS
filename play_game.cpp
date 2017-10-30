@@ -1,6 +1,6 @@
-#include "Helper.h"
-#include "Menu.h"
-#include "RPSGame.h"
+#include "Helper.hpp"
+#include "Menu.hpp"
+#include "RPSGame.hpp"
 #include <string>
 #include <iostream>
 
@@ -31,22 +31,22 @@ int main()
 	startMenuChoice = validateInt(userChoice);
 	startMenuChoice = startMenu.getUserInt(startMenuChoice);
 
+	//ASK USER IF THEY WANT TO SET STRENGTH OF TOOLS
+	std::cout << "Would you like to set the tool strength? (Y or N)" << std::endl;
+	std::getline(std::cin, userChoice);
+	//VALIDATE INPUT 
+	YN = validateChar(userChoice);
+	YN = yesOrNo(YN);
+
+	if (YN == 'Y' || YN == 'y')
+	{
+		//IF YES CALL RPSGAME SETSTRENGTH FUNCTION
+		driver.setStrength();
+	}
+
 	//WHILE USER WANTS TO PLAY
 	while(startMenuChoice != 2)
 	{
-		//ASK USER IF THEY WANT TO SET STRENGTH OF TOOLS
-		std::cout << "Would you like to set the tool strength? (Y or N)" << std::endl;
-		std::getline(std::cin, userChoice);
-		//VALIDATE INPUT 
-		YN = validateChar(userChoice);
-		YN = yesOrNo(YN);
-
-		if (YN == 'Y' || YN == 'y')
-		{
-			//IF YES CALL RPSGAME SETSTRENGTH FUNCTION
-			driver.setStrength();
-		}
-
 		//PROMPT
 		std::cout << "Choose your tool!" << std::endl;
 		std::cout << std::endl;

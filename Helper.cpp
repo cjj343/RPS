@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cctype>
 #include <stdexcept>
-#include "Helper.h"
+#include "Helper.hpp"
 
 //THIS FUNCTION VALIDATES THAT A USER ENTERED A Y OR N.
 //RETURNS VALIDATED CHAR

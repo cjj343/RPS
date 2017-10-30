@@ -15,19 +15,19 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Paper.h">
+    <ClInclude Include="Paper.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Rock.h">
+    <ClInclude Include="Rock.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="RPSGame.h">
+    <ClInclude Include="RPSGame.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Scissors.h">
+    <ClInclude Include="Scissors.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Tool.h">
+    <ClInclude Include="Tool.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -58,10 +58,10 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Menu.h">
+    <None Include="Helper.hpp">
       <Filter>Header Files</Filter>
     </None>
-    <None Include="Helper.h">
+    <None Include="Menu.hpp">
       <Filter>Header Files</Filter>
     </None>
   </ItemGroup>

@@ -111,11 +111,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Paper.h" />
-    <ClInclude Include="Rock.h" />
-    <ClInclude Include="RPSGame.h" />
-    <ClInclude Include="Scissors.h" />
-    <ClInclude Include="Tool.h" />
+    <ClInclude Include="Paper.hpp" />
+    <ClInclude Include="Rock.hpp" />
+    <ClInclude Include="RPSGame.hpp" />
+    <ClInclude Include="Scissors.hpp" />
+    <ClInclude Include="Tool.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Helper.cpp" />
@@ -128,8 +128,8 @@
     <ClCompile Include="Tool.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Helper.h" />
-    <None Include="Menu.h" />
+    <None Include="Helper.hpp" />
+    <None Include="Menu.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -12,8 +12,8 @@ following:
 	- validate Y or N
 *************************************************************************************/
 
-#ifndef HELPER_H
-#define HELPER_H
+#ifndef HELPER_HPP
+#define HELPER_HPP
 #include <string>
 
 int validateInt(std::string s);
@@ -21,4 +21,4 @@ char validateChar(std::string s);
 char yesOrNo(char c);
 
 
-#endif // !HELPER_H
+#endif // !HELPER_HPP
