@@ -35,15 +35,15 @@ char RPSGame::AI()
         {
         case 0:
             guess = 'r';
-			std::cout << "Computer choses rock." << std::endl;
+			std::cout << "Computer chose rock." << std::endl;
             break;
         case 1:
             guess = 'p';
-			std::cout << "Computer choses paper." << std::endl;
+			std::cout << "Computer chose paper." << std::endl;
             break;
         case 2:
             guess = 's';
-			std::cout << "Computer choses scissors." << std::endl;
+			std::cout << "Computer chose scissors." << std::endl;
             break;
         }
 
@@ -61,15 +61,15 @@ char RPSGame::AI()
 		{
 		case 'r':
 			response = 'p';
-			std::cout << "Computer choses paper." << std::endl;
+			std::cout << "Computer chose paper." << std::endl;
 			break;
 		case 'p':
 			response = 's';
-			std::cout << "Computer choses scissors." << std::endl;
+			std::cout << "Computer chose scissors." << std::endl;
 			break;
 		case 's':
 			response = 'r';
-			std::cout << "Computer choses rock." << std::endl;
+			std::cout << "Computer chose rock." << std::endl;
 			break;
 		}
 
@@ -83,7 +83,7 @@ void RPSGame::printStats()
 	//Print stats at the end of current round
 	std::cout << "Human wins: " << human_wins << std::endl
 		<< "Computer wins: " << computer_wins << std::endl
-		<< "Ties: " << ties << std::endl;
+		<< "Ties: " << ties << std::endl << std::endl;
 }
 
 //SETS THE STRENGTH FOR COMPUTER AND HUMAN TOOLS
@@ -171,19 +171,19 @@ void RPSGame::runGame()
 	//Compare results returned from fight functions and increment wins/ties
 	if (humanResult > computerResult)
 	{
-		std::cout << "You win!" << std::endl;
+		std::cout << "You win!" << std::endl << std::endl;
 		human_wins++;
 	}
 
 	else if (computerResult > humanResult)
 	{
-		std::cout << "Computer wins!" << std::endl;
+		std::cout << "Computer wins!" << std::endl << std::endl;
 		computer_wins++;
 	}
 
 	else
 	{
-		std::cout << "It's a tie!" << std::endl;
+		std::cout << "It's a tie!" << std::endl << std::endl;
 		ties++;
 	}
 }
