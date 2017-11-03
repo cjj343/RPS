@@ -62,11 +62,11 @@ int main()
 		toolMenuChoice = validateChar(userChoice);
 		toolMenuChoice = toolMenu.getUserChar(toolMenuChoice);
 
-		//PASS TO RPSGAME SETHUMANTOOL FUNCTION
-		driver.setHumanTool(toolMenuChoice);
-
 		//CALL SETCOMPUTER TOOL USING THE RETURNED VALUE OF THE AI
 		driver.setComputerTool(driver.AI());
+
+        //PASS TO RPSGAME SETHUMANTOOL FUNCTION
+        driver.setHumanTool(toolMenuChoice);
 
 		//CALL RUNGAME
 		driver.runGame();
